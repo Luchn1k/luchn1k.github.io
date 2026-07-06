@@ -94,6 +94,12 @@ img {
 a {
   color: inherit;
   text-decoration: none;
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
 }
 
 /* --- Scrollbar Styling --- */
@@ -556,6 +562,7 @@ a {
   border-radius: 20px;
   padding: 2rem;
   transition: all 0.4s ease;
+  cursor: default;
 }
 
 .glass-card:hover {
@@ -629,6 +636,8 @@ a {
   color: var(--accent-primary);
   font-weight: 500;
   transition: all 0.3s ease;
+  cursor: default;
+  user-select: none;
 }
 
 .highlight-tag:hover {
@@ -723,6 +732,8 @@ a {
   font-size: 0.8rem;
   color: var(--text-secondary);
   transition: all 0.3s ease;
+  cursor: default;
+  user-select: none;
 }
 
 .skill-tag:hover {
@@ -928,6 +939,45 @@ a {
   background: rgba(16, 185, 129, 0.1);
 }
 
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.certification-item {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.5rem;
+}
+
+.certification-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--accent-primary);
+  flex-shrink: 0;
+  transition: border-color 0.4s ease, color 0.4s ease;
+}
+
+.certification-info h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.certification-info p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
 /* ============================================================
    15. PROJECTS SECTION
    ============================================================ */
@@ -942,27 +992,43 @@ a {
   position: relative;
 }
 
-.project-card-header {
+.project-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1rem;
 }
 
-.project-card-header .project-links {
+.project-header .project-link {
   display: flex;
   gap: 0.75rem;
 }
 
-.project-card-header .project-links a {
+.project-header .project-link {
   color: var(--text-tertiary);
   font-size: 1.2rem;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.project-card-header .project-links a:hover {
+.project-header .project-link:hover {
   color: var(--accent-primary);
   transform: translateY(-2px);
+}
+
+.project-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--accent-primary);
+  margin-bottom: 1.25rem;
+  flex-shrink: 0;
+  transition: border-color 0.4s ease, color 0.4s ease;
 }
 
 .project-card h3 {
@@ -983,7 +1049,7 @@ a {
   gap: 0.5rem;
 }
 
-.project-tech span {
+.tech-tag {
   padding: 0.35rem 0.8rem;
   background: var(--bg-card);
   border: 1px solid var(--border-color);
@@ -991,11 +1057,26 @@ a {
   font-size: 0.8rem;
   color: var(--text-secondary);
   transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
 }
 
-.project-tech span:hover {
+a.tech-tag {
+  cursor: pointer;
+}
+
+.tech-tag:hover {
   border-color: var(--accent-primary);
   color: var(--accent-primary);
+}
+
+.contact-tag {
+  text-transform: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 /* ============================================================
@@ -1423,7 +1504,7 @@ footer a:hover {
 .glass-card,
 .btn-secondary,
 .skill-tag,
-.project-tech span,
+.tech-tag,
 .highlight-tag,
 .timeline-date,
 .social-link,

@@ -214,7 +214,10 @@ document.addEventListener('DOMContentLoaded', () => {
       if (navLinkContainer && navLinkContainer.classList.contains('active')) {
         navLinkContainer.classList.remove('active');
         const mobileBtn = document.getElementById('mobile-menu-toggle');
-        if (mobileBtn) mobileBtn.classList.remove('active');
+        if (mobileBtn) {
+          mobileBtn.classList.remove('active');
+          mobileBtn.setAttribute('aria-expanded', false);
+        }
       }
     });
   });
@@ -230,6 +233,8 @@ document.addEventListener('DOMContentLoaded', () => {
       e.stopPropagation();
       navLinkContainer.classList.toggle('active');
       mobileMenuBtn.classList.toggle('active');
+      const expanded = navLinkContainer.classList.contains('active');
+      mobileMenuBtn.setAttribute('aria-expanded', expanded);
     });
 
     // Close menu when clicking anywhere outside
@@ -241,6 +246,7 @@ document.addEventListener('DOMContentLoaded', () => {
       ) {
         navLinkContainer.classList.remove('active');
         mobileMenuBtn.classList.remove('active');
+        mobileMenuBtn.setAttribute('aria-expanded', false);
       }
     });
   }
@@ -298,5 +304,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     statNumbers.forEach((el) => counterObserver.observe(el));
   }
+
+  /* ──────────────────────────────────────────────
+   *  9. FOOTER YEAR
+   * ────────────────────────────────────────────── */
+
+  const yearEl = document.getElementById('footer-year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 }); // end DOMContentLoaded
