@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://luchn1k.github.io/sitemap.xml
+Sitemap: https://pasindukalana.is-a.dev/sitemap.xml
