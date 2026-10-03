@@ -1,0 +1,30 @@
+# Resume & Document Source Templates
+assets/cv-template.html
+*cv-template*
+*.template.html
+
+# Temporary & Backup Files
+*.bak
+*.backup
+*_bkp.pdf
+*~
+*.swp
+*.swo
+*.tmp
+*.log
+
+# OS Generated Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+[Dd]esktop.ini
+
+# IDE & Editor Settings
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace

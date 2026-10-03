@@ -57,6 +57,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const phrases = [
       'AI Engineer & Tech Lead',
       'Agentic AI Architect',
+      'AI & ML Educator',
+      'Strategic Problem Solver',
       'Multi-Agent Systems Builder',
       'LLM Infrastructure Engineer',
       'Full-Stack Developer',
